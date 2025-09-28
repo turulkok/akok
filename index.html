@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Akok Dış Ticaret Danışmanlık Limited Şirketi | Güvenilir İhracat Ortağınız
+    </title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-blue: #1e40af;
+        --secondary-blue: #3b82f6;
+        --light-blue: #dbeafe;
+        --dark-blue: #1e3a8a;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+      }
+
+      /* Navbar Styling */
+      .navbar-custom {
+        background-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-blue) !important;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-dark) !important;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-blue) !important;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--dark-blue) 100%
+        );
+        color: white;
+        padding: 120px 0 80px;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      .btn-custom {
+        background-color: white;
+        color: var(--primary-blue);
+        border: none;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        color: var(--primary-blue);
+      }
+
+      /* Section Styling */
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .section-subtitle {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Product Cards */
+      .product-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #f1f5f9;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--light-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .product-icon i {
+        font-size: 2rem;
+        color: var(--primary-blue);
+      }
+
+      .product-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .product-description {
+        color: var(--text-light);
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      /* About Section */
+      .about-section {
+        background-color: #f8fafc;
+      }
+
+      .stats-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .stats-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        display: block;
+      }
+
+      .stats-label {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Contact Section */
+      .contact-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--light-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .contact-icon i {
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.25);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--dark-blue);
+        border-color: var(--dark-blue);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--text-dark);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      .footer-link {
+        color: #60a5fa;
+        text-decoration: none;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Logo Styling */
+      .navbar-logo {
+        height: 60px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container">
+        <!-- LOGO - Bu URL'yi gerçek logo URL'niz ile değiştirin -->
+        <a href="https://ibb.co/MkMB7QZ3">
+          <img
+            src="https://i.ibb.co/MkMB7QZ3/logo.png"
+            alt="Akok Logo"
+            class="navbar-logo"
+        /></a>
+
+        <!-- Yukarıdaki YOUR_LOGO_URL kısmını gerçek logo URL'niz ile değiştirin -->
+
+        <a class="navbar-brand ms-3" href="#home"
+          >Akok Dış Ticaret Danışmanlık Limited Şirketi</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Ürünler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">İletişim</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center hero-content">
+            <h1 class="hero-title">Güvenilir Dış Ticaret Ortağınız</h1>
+            <p class="hero-subtitle">
+              Firmamız Dış Ticaret Operasyonları, danışmanlığı , eğitimi
+              ,bilirkişi ve uzmanlığı yanı sıra; ithalat, ihracat rejimi
+              konuları ve küresel ticaret konusunda da uzmanlaşmıştır.
+            </p>
+            <a href="#contact" class="btn btn-custom">
+              <i class="fas fa-envelope me-2"></i>İletişime Geçin
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Ürünlerimiz</h2>
+        <p class="section-subtitle">
+          Yüksek kaliteli kimyasal gübre ve endüstriyel ürünlerde geniş ürün
+          yelpazemiz ile hizmetinizdeyiz
+        </p>
+
+        <div class="row">
+          <!-- A4 Kağıt -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h4 class="product-title">A4 Kağıt</h4>
+              <p class="product-description">
+                Yüksek kaliteli ofis kağıtları, çeşitli gramajlarda ve
+                standartlarda tedarik edilmektedir. Uluslararası kalite
+                sertifikalarına sahip ürünler.
+              </p>
+            </div>
+          </div>
+
+          <!-- Üre -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h4 class="product-title">Üre</h4>
+              <p class="product-description">
+                %46 azot içerikli üre gübresi, tarımsal verimliliği artıran en
+                önemli gübre çeşitlerinden biridir. Granül ve prilled
+                formlarında mevcuttur.
+              </p>
+            </div>
+          </div>
+
+          <!-- DAP -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h4 class="product-title">DAP</h4>
+              <p class="product-description">
+                Di-Amonyum Fosfat gübresi, %18 azot ve %46 fosfor içeriği ile
+                bitkiler için temel besin maddelerini sağlar.
+              </p>
+            </div>
+          </div>
+
+          <!-- NPK -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-spa"></i>
+              </div>
+              <h4 class="product-title">NPK Gübresi</h4>
+              <p class="product-description">
+                Azot, fosfor ve potasyum karışımlı kompoze gübreler. Çeşitli
+                formülasyonlarda bitki ihtiyaçlarına özel çözümler.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sülfür -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-industry"></i>
+              </div>
+              <h4 class="product-title">Sülfür</h4>
+              <p class="product-description">
+                Endüstriyel kullanım için yüksek saflıkta sülfür ürünleri.
+                Çeşitli mesh boyutlarında ve kalite standartlarında.
+              </p>
+            </div>
+          </div>
+
+          <!-- İlave Ürün Kartı -->
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+              <h4 class="product-title">Diğer Ürünler</h4>
+              <p class="product-description">
+                Geniş ürün yelpazemizde daha fazla kimyasal gübre ve endüstriyel
+                ürün seçenekleri için bizimle iletişime geçin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <h2 class="section-title">Hakkımızda</h2>
+        <p class="section-subtitle">
+          Küresel pazarlarda güçlü bağlantılarımızla, ithalat ve ihracat
+          süreçlerinizi güvenle yönetiyoruz.
+        </p>
+
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Deneyim ve Güven</h3>
+            <p class="mb-4">
+              Uzun yıllar boyunca edindiğimiz ticari deneyim ve bilgi
+              birikimimizle, akademik düzeyde dış ticaret faaliyetleri,
+              danışmanlık, eğitim ve organizasyonel faaliyetler yürütüyoruz.
+              2008 yılından bu yana ihracatçılar birliğine kayıtlı olan
+              şirketimizin temel ilkesi, her türlü işimizde edindiğimiz
+              deneyimleri, birlikte çalıştığımız tüm kişi ve kuruluşlarla
+              paylaşarak doğru, dürüst ve şeffaf bir ticaret ortamı sağlamaktır.
+              Küresel pazarlardaki geniş ağımız ve ticaret ortaklarımızla olan
+              uzun vadeli ilişkilerimiz sayesinde her türlü arz ve talebi hızlı
+              bir şekilde karşılıyoruz. Ticari faaliyetlerimiz, özellikle metal,
+              plastik, tıbbi malzeme, tarım ürünleri ve makineleri, hammaddeler,
+              kuru gıda ve meyveler, fotokopi ve ambalaj kağıtları ve benzeri
+              ürünler gibi operasyonel alanlarda, ithalat, ihracat ve transit
+              ticaret yoluyla tüm sektörlerde devam etmektedir. İhtiyacınız
+              nedir? Ya da ne satmak istiyorsunuz? Bizimle paylaşarak, alım ve
+              satım konusundaki uzmanlığımızdan yararlanabilirsiniz.
+            </p>
+            <p class="mb-4">
+              Müşteri memnuniyetini ön planda tutarak, kaliteli ürünleri en
+              uygun fiyatlarla tedarik etmek için sürekli çalışmaktayız. Geniş
+              tedarikçi ağımız ve deneyimli ekibimiz sayesinde müşterilerimizin
+              ihtiyaçlarına en hızlı şekilde cevap vermekteyiz.
+            </p>
+            <p>
+              Sürdürülebilir ticaret anlayışımız ve müşteri odaklı hizmet
+              yaklaşımımızla sektörde güvenilir bir marka haline gelmiştir.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-6 mb-4">
+                <div class="stats-card">
+                  <span class="stats-number">18+</span>
+                  <span class="stats-label">Yıl Deneyim</span>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stats-card">
+                  <span class="stats-number">50+</span>
+                  <span class="stats-label">Ülke</span>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stats-card">
+                  <span class="stats-number">1000+</span>
+                  <span class="stats-label">Mutlu Müşteri</span>
+                </div>
+              </div>
+              <div class="col-6 mb-4">
+                <div class="stats-card">
+                  <span class="stats-number">100K+</span>
+                  <span class="stats-label">Ton Ürün</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">İletişim</h2>
+        <p class="section-subtitle">
+          Ürün talepleriniz ve sorularınız için bizimle iletişime geçin
+        </p>
+
+        <div class="row">
+          <!-- İletişim Bilgileri -->
+          <div class="col-lg-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h5>Telefon</h5>
+              <p class="mb-0">+90 530 569 43 26</p>
+              <small class="text-muted">Pazartesi-Cuma 09:00-18:00</small>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h5>E-posta</h5>
+              <p class="mb-0">info@akok.com.tr</p>
+              <small class="text-muted">24 saat içinde dönüş</small>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h5>Adres</h5>
+              <p class="mb-0">
+                Balikli caddesi 7-20 Merkez <br />TR-43030 Kutahya
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ürün Talebi Formu -->
+        <div class="row mt-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="contact-card">
+              <h4 class="mb-4 text-center">Ürün Talebi Formu</h4>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="company" class="form-label"
+                      >Şirket Adı (CIS) *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="company"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="authorized" class="form-label"
+                      >Yetkili Kişi *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="authorized"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Ad Soyad *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">E-posta *</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="product" class="form-label"
+                      >Talep Edilen Ürün *</label
+                    >
+                    <select class="form-control" id="product" required>
+                      <option value="">Ürün Seçiniz</option>
+                      <option value="a4">A4 Kağıt</option>
+                      <option value="urea">Üre</option>
+                      <option value="dap">DAP</option>
+                      <option value="npk">NPK Gübresi</option>
+                      <option value="sulfur">Sülfür</option>
+                      <option value="other">Diğer</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="packaging" class="form-label"
+                      >Paketleme *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="packaging"
+                      placeholder="örn: 50kg çuval, jumbo bag"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="quantity" class="form-label">Miktar *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="quantity"
+                      placeholder="örn: 1000 metrik ton, 500 koli"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="delivery_terms" class="form-label"
+                      >Teslim Şekli *</label
+                    >
+                    <select class="form-control" id="delivery_terms" required>
+                      <option value="">Teslim Şekli Seçiniz</option>
+                      <option value="fob">FOB</option>
+                      <option value="cif">CIF</option>
+                      <option value="dap">DAP</option>
+                      <option value="cfr">CFR</option>
+                      <option value="exw">EXW</option>
+                      <option value="fca">FCA</option>
+                      <option value="other">Diğer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="delivery_location" class="form-label"
+                      >Teslim Yeri *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="delivery_location"
+                      placeholder="örn: İstanbul Limanı, Mersin Limanı"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="payment_terms" class="form-label"
+                      >Ödeme Şekli *</label
+                    >
+                    <select class="form-control" id="payment_terms" required>
+                      <option value="">Ödeme Şekli Seçiniz</option>
+                      <option value="tt">T/T (Telegrafik Transfer)</option>
+                      <option value="lc">L/C (Akreditif)</option>
+                      <option value="dlc">
+                        DLC (Documentary Letter of Credit)
+                      </option>
+                      <option value="sblc">
+                        SBLC (Standby Letter of Credit)
+                      </option>
+                      <option value="advance">Advance Payment</option>
+                      <option value="other">Diğer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Ek Bilgiler</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="4"
+                    placeholder="Ürün özellikleri, teslimat zamanı, kalite standartları gibi ek bilgilerinizi yazınız..."
+                  ></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane me-2"></i>Talebi Gönder
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              &copy; 2020 Akok Dış Ticaret Danışmanlık Limited Şirketi. Tüm
+              hakları saklıdır.
+            </p>
+            <a
+              href="https://www.europages.co.uk/AKOK-FOREIGN-TRADE-CONSULTANCY-COMPANY-LTD/00000005351472-647211001.html"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-external-link-alt me-1"></i>EuroPages
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar-custom");
+        if (window.scrollY > 50) {
+          navbar.style.background = "rgba(255, 255, 255, 0.98)";
+          navbar.style.backdropFilter = "blur(10px)";
+        } else {
+          navbar.style.background = "#ffffff";
+          navbar.style.backdropFilter = "none";
+        }
+      });
+
+      // Form submission handler
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Form verilerini topla
+        const formData = {
+          company: document.getElementById("company").value,
+          authorized: document.getElementById("authorized").value,
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          product: document.getElementById("product").value,
+          packaging: document.getElementById("packaging").value,
+          quantity: document.getElementById("quantity").value,
+          delivery_terms: document.getElementById("delivery_terms").value,
+          delivery_location: document.getElementById("delivery_location").value,
+          payment_terms: document.getElementById("payment_terms").value,
+          message: document.getElementById("message").value,
+        };
+
+        // Ürün seçeneklerinin Türkçe karşılıkları
+        const productNames = {
+          a4: "A4 Kağıt",
+          urea: "Üre",
+          dap: "DAP",
+          npk: "NPK Gübresi",
+          sulfur: "Sülfür",
+          other: "Diğer",
+        };
+
+        // Teslim şekli seçeneklerinin karşılıkları
+        const deliveryTerms = {
+          fob: "FOB",
+          cif: "CIF",
+          dap: "DAP",
+          cfr: "CFR",
+          exw: "EXW",
+          fca: "FCA",
+          other: "Diğer",
+        };
+
+        // Ödeme şekli seçeneklerinin karşılıkları
+        const paymentTerms = {
+          tt: "T/T (Telegrafik Transfer)",
+          lc: "L/C (Akreditif)",
+          dlc: "DLC (Documentary Letter of Credit)",
+          sblc: "SBLC (Standby Letter of Credit)",
+          advance: "Advance Payment",
+          other: "Diğer",
+        };
+
+        // E-mail konusu oluştur
+        const productName = productNames[formData.product] || formData.product;
+        const subject = `Ürün Talebi - ${formData.company} - ${productName}`;
+
+        // E-mail body oluştur
+        const emailBody = `
+Yeni Ürün Talebi
+================
+
+Şirket Bilgileri:
+- Şirket Adı (CIS): ${formData.company}
+- Yetkili Kişi: ${formData.authorized}
+- İletişim Kişisi: ${formData.name}
+- E-posta: ${formData.email}
+
+Ürün Bilgileri:
+- Talep Edilen Ürün: ${productName}
+- Paketleme: ${formData.packaging}
+- Miktar: ${formData.quantity}
+
+Ticaret Koşulları:
+- Teslim Şekli: ${
+          deliveryTerms[formData.delivery_terms] || formData.delivery_terms
+        }
+- Teslim Yeri: ${formData.delivery_location}
+- Ödeme Şekli: ${paymentTerms[formData.payment_terms] || formData.payment_terms}
+
+Ek Bilgiler:
+${formData.message || "Belirtilmemiş"}
+
+Tarih: ${new Date().toLocaleDateString(
+          "tr-TR"
+        )} ${new Date().toLocaleTimeString("tr-TR")}
+        `.trim();
+
+        // Mailto link oluştur
+        const mailtoLink = `mailto:info@akok.com.tr?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(emailBody)}`;
+
+        // Mail uygulamasını aç
+        window.location.href = mailtoLink;
+
+        // Kullanıcıya bilgi ver
+        alert(
+          'Mail uygulamanız açılacak. Talebinizi göndermek için mail uygulamanızdan "Gönder" butonuna tıklayın.'
+        );
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
